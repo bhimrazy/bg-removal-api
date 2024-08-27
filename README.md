@@ -1,1 +1,1 @@
-# Deploy Backgroung Removal API with LitServe
+# Deploy Background Removal API with LitServe
