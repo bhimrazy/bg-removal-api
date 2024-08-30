@@ -10,10 +10,15 @@ def send_image_for_processing(input_image_path: str, output_image_path: str):
 
     # Open and read the input image file
     with open(input_image_path, "rb") as input_file:
-        image_data = input_file.read()
+        files = {'request': (input_image_path, input_file, 'image/jpeg')}
 
-    # Send the image to the server
-    response = requests.post(API_URL, files={"content": image_data})
+        # Set the headers
+        headers = {
+            'accept': 'application/json'
+        }
+
+        # Send the image to the server
+        response = requests.post(API_URL, headers=headers, files=files)
 
     # Check if the request was successful
     if response.status_code == 200:
