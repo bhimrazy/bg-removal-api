@@ -2,6 +2,7 @@ litserve
 torch
 torchvision
 pillow
+python-multipart
 numpy
 typing
 scikit-image
